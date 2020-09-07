@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Abonne</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Codeabonne</th>
+                <td>{{ abonne.codeAbonne }}</td>
+            </tr>
+            <tr>
+                <th>Nomabonne</th>
+                <td>{{ abonne.nomAbonne }}</td>
+            </tr>
+            <tr>
+                <th>Login</th>
+                <td>{{ abonne.login }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ abonne.password }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ abonne.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ abonne.ville }}</td>
+            </tr>
+            <tr>
+                <th>Codepostal</th>
+                <td>{{ abonne.codePostal }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ abonne.email }}</td>
+            </tr>
+            <tr>
+                <th>Userid</th>
+                <td>{{ abonne.userid }}</td>
+            </tr>
+            <tr>
+                <th>Credit</th>
+                <td>{{ abonne.credit }}</td>
+            </tr>
+            <tr>
+                <th>Prenomabonne</th>
+                <td>{{ abonne.prenomAbonne }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('abonne_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('abonne_edit', { 'codeAbonne': abonne.codeAbonne }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
